@@ -1,0 +1,28 @@
+
+        .bs-example {
+            margin: 20px;
+        }
+
+        .panel-title .glyphicon {
+            font-size: 14px;
+        }
+
+        #accordion>div.panel-default
+        {
+            background: linear-gradient(to right, #07c0f3 0%, #07c0f3 3%, #ffffff 0.5%, #ffffff 0.5%);
+            border-radius: 10px;
+            margin: 3px;
+            padding: 0px;
+        }
+
+        
+        #buttonShowAll {
+            background: linear-gradient(to right, #07c0f3 0%, #07c0f3 3%, #ffffff 0.5%, #ffffff 0.5%);
+            border-radius: 10px;
+            margin: 2px;
+            padding: 0px;
+        }
+
+        .glyphicon-minus {
+            color: red
+        }
