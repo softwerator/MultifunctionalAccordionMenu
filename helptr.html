@@ -9,94 +9,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style type="text/css">
-        .bs-example {
-            margin: 20px;
-        }
-
-        .panel-title .glyphicon {
-            font-size: 14px;
-        }
-
-        #accordion>div.panel-default
-        {
-            background: linear-gradient(to right, #07c0f3 0%, #07c0f3 3%, #ffffff 0.5%, #ffffff 0.5%);
-            border-radius: 10px;
-            margin: 3px;
-            padding: 0px;
-        }
-
-        
-        #buttonShowAll {
-            background: linear-gradient(to right, #07c0f3 0%, #07c0f3 3%, #ffffff 0.5%, #ffffff 0.5%);
-            border-radius: 10px;
-            margin: 2px;
-            padding: 0px;
-        }
-
-        .glyphicon-minus {
-            color: red
-        }
-    </style>
-    <script>
-        $(function () {
-            var active = true;
-            $(".collapse.in").each(function(){
-                $(this).siblings(".panel-heading").find(".glyphicon").addClass("glyphicon-minus").removeClass("glyphicon-plus");
-            });
-            $('#buttonShowAll').click(function () {
-                if (active) {
-                    active = false;
-                    $(this).parent().find(".glyphicon").removeClass("glyphicon-plus").addClass("glyphicon-minus").css({"color": "red"});
-                    $('.panel-collapse').collapse('show');
-                    $('.panel-title').attr('data-toggle', 'collapse');
-                    $("#buttonShowAll").css({ "background": "linear-gradient(to right, #FF0000 0%,#FF0000 3%,#ffffff 0.5%,#ffffff 0.5%)" });
-                    $("#buttonShowAll_Text").html("TÜM DETAYLARI GİZLE");
-                    $('div.panel-default').css({
-                        "border-radius": "10px",
-                        "background": "linear-gradient(to right, #FF0000 0%,#FF0000 3%,#ffffff 0.5%,#ffffff 0.5%)",
-                        "padding": "0px",
-                        "margin": "3px"
-                    });
-                } else {
-                    active = true;
-        	        $(this).parent().find(".glyphicon").removeClass("glyphicon-minus").addClass("glyphicon-plus").css({"color": "#07c0f3"});
-                    $('.panel-collapse').collapse('hide');
-                    $('.panel-title').attr('data-toggle', 'collapse');
-                    $("#buttonShowAll").css({ "background": "linear-gradient(to right, #07c0f3 0%,#07c0f3 3%,#ffffff 0.5%,#ffffff 0.5%)" });
-                    $("#buttonShowAll_Text").html("TÜM DETAYLARI GÖSTER");
-                    $('div.panel-default').css({
-                        "border-radius": "10px",
-                        "background": "linear-gradient(to right, #07c0f3 0%,#07c0f3 3%,#ffffff 0.5%,#ffffff 0.5%)",
-                        "padding": "0px",
-                        "margin": "3px"
-                    });
-                }
-            });
-
-            $('.collapse').on('show.bs.collapse', function () {
-                $(this).parent().find(".glyphicon").removeClass("glyphicon-plus").addClass("glyphicon-minus").css({"color": "red"});
-                $(this).parent().css({
-                    "border-radius": "10px",
-                    "background": "linear-gradient(to right, #FF0000 0%,#FF0000 3%,#ffffff 0.5%,#ffffff 0.5%)",
-                    "padding": "0px",
-                    "margin": "3px"
-                });
-                if (active) {
-                    $('#accordion .in').collapse('hide');
-                }
-            }).on('hide.bs.collapse', function () {
-        	    $(this).parent().find(".glyphicon").removeClass("glyphicon-minus").addClass("glyphicon-plus").css({"color": "#07c0f3"});
-                $(this).parent().css({
-                    "border-radius": "10px",
-                    "background": "linear-gradient(to right, #07c0f3 0%,#07c0f3 3%,#ffffff 0.5%,#ffffff 0.5%)",
-                    "padding": "0px",
-                    "margin": "3px"
-                });
-            });
-
-        });
-    </script>
+    <link rel="stylesheet" href="css\style.css">
+    <script src="script\script.js"></script>
 </head>
 
 <body>
@@ -517,7 +431,8 @@
                     <p>
                         Genel Kısayol Tuşları
                         <br/>Uygulamanın herhangi bir sayfasından erişilebilen tuşlardır.
-                        <br/>F1: Yardım sayfasını açar. İpucu: yardım sayfası açıldığında, hangi ekrandan gelindiyse o ekranla ilgili konuya görüntülenir.
+                        <br/>F1: Yardım sayfasını açar. İpucu: yardım sayfası açıldığında, hangi ekrandan gelindiyse o ekranla
+                        ilgili konuya görüntülenir.
                         <br/>F2: Üzerinde bulunulan metni incelemeniz için metin gözden geçirme panelini açar.
                         <br/>F3 veya Kontrol+3: Detaylı arama sayfasını açar.
                         <br/>F6: Nerede olduğunuzu kolayca öğrenebilmeniz için imleci aktif sayfanın başlığına odaklar.
@@ -527,10 +442,12 @@
                         <br/>F10 veya Alt: Menüyü açar/kapatır.
                         <br/>F12: Geribildirim Gönderme sayfasına gider.
                         <br/>Escape (çıkış): Bir önceki sayfaya gider veya menüyü kapatır.
-                        <br/>Enter (giriş): Odağın üzerinde bulunduğu ögenin varsayılan eylemini gerçekleştirir. Örneğin: Bir sesli kitabın çalmaya başlaması gibi.
+                        <br/>Enter (giriş): Odağın üzerinde bulunduğu ögenin varsayılan eylemini gerçekleştirir. Örneğin: Bir
+                        sesli kitabın çalmaya başlaması gibi.
                         <br/>Aşağı yön tuşu: İmleci bulunulan ögenin altındaki ögeye kaydırır.
                         <br/>Yukarı yön tuşu: İmleci bulunulan ögenin üstündeki ögeye kaydırır.
-                        <br/>Sağ yön tuşu: İmleci bulunulan ögenin sağındaki ögeye kaydırır. ipucu: bu tuş kitap kataloğundaki kitap listesindeyken kitap menüsünü açar.
+                        <br/>Sağ yön tuşu: İmleci bulunulan ögenin sağındaki ögeye kaydırır. ipucu: bu tuş kitap kataloğundaki
+                        kitap listesindeyken kitap menüsünü açar.
                         <br/>Sol yön tuşu: İmleci bulunulan ögenin solundaki ögeye kaydırır.
                         <br/>Pageup (sayfa yukarı tuşu): Sayfayı yukarı doğru kaydırır.
                         <br/>Pagedown (sayfa aşağı tuşu): Sayfayı aşağıya doğru kaydırır.
@@ -558,7 +475,8 @@
                     <p>
                         Ana Sayfa Kısayol Tuşları
                         <br/>Kontrol+f: Klavye odağını arama kutucuğuna götürür.
-                        <br/>Enter (giriş): Arama kutucuğuna girilen metni kitap kataloğunda arar. İpucu: eğer girilen metinle eşleşen kitaplar bulunduysa, katalogda görüntülenir.
+                        <br/>Enter (giriş): Arama kutucuğuna girilen metni kitap kataloğunda arar. İpucu: eğer girilen metinle
+                        eşleşen kitaplar bulunduysa, katalogda görüntülenir.
                     </p>
                 </div>
             </div>
@@ -595,7 +513,8 @@
                         <br/>
                         <br/>Metin formatında eser okurken:
                         <br/>Escape (çıkış): Arama sayfasını kapatır. İpucu: eğer tam ekran modu etkinse, normal ekrana döner.
-                        <br/>Enter (giriş): Metin bulma panelindeyken;Arama kutucuğuna girdiğiniz metni arar. Sayfa Numarası alanındayken; girilen sayfaya gider.
+                        <br/>Enter (giriş): Metin bulma panelindeyken;Arama kutucuğuna girdiğiniz metni arar. Sayfa Numarası alanındayken;
+                        girilen sayfaya gider.
                         <br/>Kontrol+ F3: Sonraki metni bulur.
                         <br/>Shift+ F3: Önceki metni bulur.
                         <br/>Kontrol+ F: Metin arama penceresini açar.
@@ -627,7 +546,8 @@
                         <br/>Home (hom): katalogda bulunduğunuz sayfadaki ilk kitaba gider.
                         <br/>End: katalogda bulunduğunuz sayfadaki son kitaba gider.
                         <br/>Enter (Giriş): İmleç sayfa numarası alanındayken girilen sayfaya gider
-                        <br/>Sağ ok tuşu: bir kitabın üzerindeyken; Dinle/oku, detaylar ve indir düğmelerinin bulunduğu kitap menüsünü açar. 
+                        <br/>Sağ ok tuşu: bir kitabın üzerindeyken; Dinle/oku, detaylar ve indir düğmelerinin bulunduğu kitap
+                        menüsünü açar.
                         <br/>Aynı tuşa basıldıkça seçenekler arasında gezinmeyi sağlar.
                     </p>
                 </div>
@@ -691,4 +611,5 @@
         </div>
     </div>
 </body>
+
 </html>
