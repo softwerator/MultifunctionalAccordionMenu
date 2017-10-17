@@ -8,3 +8,5 @@ Ama en son tıkladığınız alan görüntülenecek tek alan olacaktır.
 Kullanıcı açık olması istenmeyen alanlar kapatabilir. Aynı zamanda bu kapatılmış alanlar yeniden açılabilir.
 
 "TÜM DETAYLARI GİZLE" butonuna tıklandığı anda, sayfa ilk yüklendiği andaki görünümüne gelecektir.
+
+https://burakcantimucin.github.io/MultifunctionalAccordionMenu/
